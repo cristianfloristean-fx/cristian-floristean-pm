@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristian Floriștean — Senior Product Manager</title>
+<meta name="description" content="Cristian Floriștean — Senior Product Manager. 10+ years leading eCommerce, POS, and delivery products across Romania, Bulgaria, Hungary, and France.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EE;
+    --paper-dim:#EEEAE0;
+    --ink:#1C1B18;
+    --ink-soft:#5B564C;
+    --line:#D9D3C4;
+    --fire:#C1401F;
+    --fire-dim:#EFDCD3;
+    --mint:#2B6E58;
+    --mint-dim:#DCE7E1;
+    --paper-rgb:246,244,238;
+    --max:1100px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  ::selection{background:var(--fire);color:var(--paper);}
+  :focus-visible{outline:2px solid var(--fire);outline-offset:3px;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(var(--paper-rgb),0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max);margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:15px;
+    letter-spacing:.02em;text-decoration:none;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  .nav-mark .dot{width:8px;height:8px;border-radius:50%;background:var(--fire);display:inline-block;}
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;
+    color:var(--ink-soft);letter-spacing:.03em;
+  }
+  nav.links a:hover{color:var(--fire);}
+  .nav-cta{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+    border:1px solid var(--ink);padding:8px 16px;text-decoration:none;color:var(--ink);
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--paper);}
+  @media(max-width:720px){ nav.links{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 40px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.35fr 0.65fr;gap:56px;align-items:start;
+  }
+  @media(max-width:800px){ .hero-grid{grid-template-columns:1fr;} }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em;
+    color:var(--mint);text-transform:uppercase;
+    display:flex;align-items:center;gap:8px;margin-bottom:18px;
+  }
+  .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--mint);
+    box-shadow:0 0 0 3px var(--mint-dim);}
+  h1.headline{
+    font-size:clamp(2.1rem,4.2vw,3.15rem);
+    line-height:1.08;margin:0 0 20px;letter-spacing:-0.01em;font-weight:700;
+  }
+  h1.headline .accent{color:var(--fire);}
+  .sub{font-size:1.08rem;color:var(--ink-soft);max-width:52ch;margin:0 0 30px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;font-size:13.5px;letter-spacing:.02em;
+    padding:12px 20px;text-decoration:none;display:inline-block;border:1px solid var(--ink);
+  }
+  .btn-solid{background:var(--ink);color:var(--paper);}
+  .btn-solid:hover{background:var(--fire);border-color:var(--fire);}
+  .btn-ghost{color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--fire);color:var(--fire);}
+
+  /* photo ticket */
+  .photo-ticket{
+    background:var(--paper-dim);border:1px solid var(--line);padding:18px 18px 22px;
+    position:relative;
+  }
+  .photo-ticket img{width:100%;filter:grayscale(12%);}
+  .photo-ticket .stub{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);
+  }
+  .photo-ticket .stub b{color:var(--ink);}
+
+  /* ---------- STAT RECEIPT ---------- */
+  .receipt{
+    margin:44px 0 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:22px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  @media(max-width:640px){ .receipt{grid-template-columns:1fr;gap:14px;} }
+  .receipt-item{display:flex;justify-content:space-between;align-items:baseline;
+    font-family:'IBM Plex Mono',monospace;}
+  .receipt-item .val{font-size:1.5rem;font-weight:700;color:var(--fire);}
+  .receipt-item .label{font-size:11.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;text-align:right;max-width:14ch;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{padding:76px 0;}
+  .section-head{margin-bottom:44px;}
+  .section-tag{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+    color:var(--fire);text-transform:uppercase;margin-bottom:10px;
+  }
+  .section-title{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;margin:0;letter-spacing:-.01em;}
+  .section-note{color:var(--ink-soft);max-width:60ch;margin-top:10px;}
+
+  /* ---------- TICKETS (case studies) ---------- */
+  .ticket{
+    position:relative;background:var(--paper-dim);
+    border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-bottom:56px;
+  }
+  .ticket-head{
+    display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+    padding:22px 28px 18px;border-top:1px solid var(--line);
+    position:relative;
+  }
+  .ticket-head::before,.ticket-head::after{
+    content:"";position:absolute;top:-8px;width:16px;height:16px;border-radius:50%;
+    background:var(--paper);border:1px solid var(--line);
+  }
+  .ticket-head::before{left:-9px;}
+  .ticket-head::after{right:-9px;}
+  .ticket-num{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);
+    letter-spacing:.05em;margin-bottom:6px;
+  }
+  .ticket-title{font-size:1.4rem;font-weight:700;margin:0 0 6px;}
+  .ticket-meta{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink-soft);}
+  .ticket-badge{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;white-space:nowrap;
+    background:var(--mint-dim);color:var(--mint);padding:7px 12px;border:1px solid var(--mint);
+    height:fit-content;text-transform:uppercase;letter-spacing:.03em;
+  }
+  .ticket-gallery{
+    display:grid;grid-auto-flow:column;grid-auto-columns:minmax(160px,1fr);
+    gap:10px;overflow-x:auto;padding:18px 28px 0;
+  }
+  .ticket-gallery.single{grid-auto-columns:minmax(220px,1fr);}
+  .ticket-gallery img{border:1px solid var(--line);}
+  .ticket-body{padding:20px 28px 26px;}
+  .ticket-line{
+    display:grid;grid-template-columns:110px 1fr;gap:18px;padding:12px 0;
+    border-top:1px dashed var(--line);
+  }
+  .ticket-line:first-child{border-top:none;}
+  .ticket-line .k{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);
+    text-transform:uppercase;letter-spacing:.04em;padding-top:2px;
+  }
+  .ticket-line .v{font-size:.98rem;}
+  .stamp{
+    margin-top:18px;padding:16px 18px;border:1.5px solid var(--fire);color:var(--fire);
+    transform:rotate(-0.6deg);font-size:.95rem;position:relative;background:var(--fire-dim);
+  }
+  .stamp b{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;
+    display:block;margin-bottom:6px;text-transform:uppercase;
+  }
+  .stamp span{color:var(--ink);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:start;}
+  @media(max-width:680px){ .about-grid{grid-template-columns:1fr;} }
+  .about-photo{border:1px solid var(--line);}
+  .cert-list{list-style:none;margin:18px 0 0;padding:0;}
+  .cert-list li{
+    display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;
+    border-top:1px dashed var(--line);font-size:.93rem;
+  }
+  .cert-list li:first-child{border-top:1px solid var(--ink);}
+  .cert-list .org{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);white-space:nowrap;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact-block{
+    background:var(--ink);color:var(--paper);padding:64px 0 40px;
+  }
+  .contact-inner{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .contact-block .section-tag{color:#E8A98C;}
+  .contact-title{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:700;margin:0 0 18px;max-width:22ch;}
+  .contact-row{
+    display:flex;flex-wrap:wrap;gap:14px;margin:26px 0 40px;
+  }
+  .contact-row a{
+    font-family:'IBM Plex Mono',monospace;font-size:13.5px;text-decoration:none;
+    border:1px solid rgba(246,244,238,.35);padding:12px 20px;color:var(--paper);
+  }
+  .contact-row a:hover{border-color:var(--fire);color:var(--fire);}
+  .foot-line{
+    border-top:1px dashed rgba(246,244,238,.25);padding-top:20px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:rgba(246,244,238,.55);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark"><span class="dot"></span>CF · PRODUCT</a>
+    <nav class="links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Let's talk</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span>Currently — Senior PM, Digital Products &amp; Product Owner (Breeze POS) @ Bit-soft</div>
+        <h1 class="headline">A Product Manager who turns operational chaos into <span class="accent">measurable outcomes.</span></h1>
+        <p class="sub">10+ years leading digital products across eCommerce, POS, delivery, and telecom — for enterprise restaurant brands operating across Romania, Bulgaria, Hungary, and France.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="#work">See selected work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="photo-ticket">
+        <img src="assets/profile.jpg" alt="Portrait of Cristian Floriștean">
+        <div class="stub">
+          <span>TICKET</span>
+          <span><b>#001</b> · CF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="receipt">
+      <div class="receipt-item"><span class="val">10+ yrs</span><span class="label">Product management</span></div>
+      <div class="receipt-item"><span class="val">40% adoption</span><span class="label">Breeze POS, in 12 months</span></div>
+      <div class="receipt-item"><span class="val">~500K/mo</span><span class="label">Transactions processed</span></div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work" class="section wrap">
+    <div class="section-head">
+      <div class="section-tag">// six order tickets</div>
+      <h2 class="section-title">Selected work</h2>
+      <p class="section-note">Enterprise restaurant-tech products, shipped end to end — from problem framing to adoption.</p>
+    </div>
+
+    <!-- Ticket 01 -->
+    <article class="ticket">
+      <div class="ticket-head">
+        <div>
+          <div class="ticket-num">TICKET #01</div>
+          <h3 class="ticket-title">Breeze POS</h3>
+          <div class="ticket-meta">Senior Product Manager &amp; Product Owner · Bit-soft · 2016–2026</div>
+        </div>
+        <div class="ticket-badge">40% adoption · 12 months</div>
+      </div>
+      <div class="ticket-gallery">
+        <img src="assets/pos_order.jpg" alt="Breeze POS course-based order screen">
+        <img src="assets/pos_persons.jpg" alt="Breeze POS per-person split and salad selection flow">
+        <img src="assets/pos_item.jpg" alt="Breeze POS menu item detail with affinities">
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-line"><div class="k">Problem</div><div class="v">Restaurant groups needed one POS platform that could handle multi-course dine-in service, splits, and payments — without slowing staff down during peak service.</div></div>
+        <div class="ticket-line"><div class="k">My role</div><div class="v">Owned the Breeze POS backlog end-to-end and led 4 cross-functional squads through the redesign and international launch, cutting requirements rework by roughly 80% through clearer discovery and acceptance criteria.</div></div>
+        <div class="ticket-line"><div class="k">Outcome</div><div class="v">Launched across Romania, Bulgaria, Hungary, and France, reaching 40% adoption among target restaurants within 12 months — including Pizza Hut and City Grill.</div></div>
+        <div class="stamp"><b>The call I'd defend</b><span>Prioritized speed-of-service workflows — course timing, table management — over feature breadth. A POS that slows down a busy Thursday night loses staff trust immediately.</span></div>
+      </div>
+    </article>
+
+    <!-- Ticket 02 -->
+    <article class="ticket">
+      <div class="ticket-head">
+        <div>
+          <div class="ticket-num">TICKET #02</div>
+          <h3 class="ticket-title">Kitchen Display System</h3>
+          <div class="ticket-meta">Bit-soft · 2016–2026</div>
+        </div>
+        <div class="ticket-badge">10% → 0% lost orders</div>
+      </div>
+      <div class="ticket-gallery single">
+        <img src="assets/kds_board.jpg" alt="Kitchen Display System order ticket board with course timers">
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-line"><div class="k">Problem</div><div class="v">Orders were getting lost between the POS and the kitchen, with no visibility into course timing or prep status.</div></div>
+        <div class="ticket-line"><div class="k">My role</div><div class="v">Led the KDS product from concept to enterprise rollout, defining course-based timers and kitchen workflow logic.</div></div>
+        <div class="ticket-line"><div class="k">Outcome</div><div class="v">Reduced lost restaurant orders from 10% to 0%.</div></div>
+        <div class="stamp"><b>The call I'd defend</b><span>Built the system around course sequencing, not just ticket printing — kitchens needed to know when to fire, not just what to cook.</span></div>
+      </div>
+    </article>
+
+    <!-- Ticket 03 -->
+    <article class="ticket">
+      <div class="ticket-head">
+        <div>
+          <div class="ticket-num">TICKET #03</div>
+          <h3 class="ticket-title">Contactless QR Table Ordering</h3>
+          <div class="ticket-meta">Bit-soft · white-label · embedded in the Adobe Life app</div>
+        </div>
+        <div class="ticket-badge">+17% order value</div>
+      </div>
+      <div class="ticket-gallery single">
+        <img src="assets/qr_menu.jpg" alt="QR table-ordering menu on mobile">
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-line"><div class="k">Problem</div><div class="v">Restaurants needed a way for guests to browse and order directly from the table, without adding friction or replacing existing POS workflows.</div></div>
+        <div class="ticket-line"><div class="k">My role</div><div class="v">Built a white-label QR ordering experience, then guided its integration into the Adobe Life application for top establishments.</div></div>
+        <div class="ticket-line"><div class="k">Outcome</div><div class="v">Adopted by 40+ establishments, increasing average order value by 17%.</div></div>
+        <div class="stamp"><b>The call I'd defend</b><span>Kept the ordering flow white-label from day one, so it could be embedded into partner apps like Adobe Life instead of forcing guests into a separate branded app.</span></div>
+      </div>
+    </article>
+
+    <!-- Ticket 04 -->
+    <article class="ticket">
+      <div class="ticket-head">
+        <div>
+          <div class="ticket-num">TICKET #04</div>
+          <h3 class="ticket-title">Delivery Dispatch &amp; Driver App</h3>
+          <div class="ticket-meta">Bit-soft</div>
+        </div>
+        <div class="ticket-badge">High-volume, real-time</div>
+      </div>
+      <div class="ticket-gallery">
+        <img src="assets/delivery_dispatch.jpg" alt="Delivery dispatch console with live driver map">
+        <img src="assets/delivery_driver.jpg" alt="Driver app with live navigation and order details">
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-line"><div class="k">Problem</div><div class="v">Enterprise delivery clients needed real-time visibility into orders and drivers across dense urban areas, at high volume.</div></div>
+        <div class="ticket-line"><div class="k">My role</div><div class="v">Led product for the dispatch console and companion driver app, covering order routing, live driver tracking, and delivery confirmation.</div></div>
+        <div class="ticket-line"><div class="k">Outcome</div><div class="v">Supported high-volume enterprise order processing with reliable, real-time dispatch.</div></div>
+        <div class="stamp"><b>The call I'd defend</b><span>Designed dispatch around live map visibility for every open order — dispatchers needed to see the bottleneck, not read it in a list.</span></div>
+      </div>
+    </article>
+
+    <!-- Ticket 05 -->
+    <article class="ticket">
+      <div class="ticket-head">
+        <div>
+          <div class="ticket-num">TICKET #05</div>
+          <h3 class="ticket-title">Loyalty &amp; Mobile App</h3>
+          <div class="ticket-meta">Bit-soft · Subway — 400+ locations, France</div>
+        </div>
+        <div class="ticket-badge">National rollout</div>
+      </div>
+      <div class="ticket-gallery">
+        <img src="assets/loyalty_home.jpg" alt="Loyalty app home screen with tier progress">
+        <img src="assets/loyalty_locator.jpg" alt="Store locator map across Paris">
+        <img src="assets/loyalty_tiers.jpg" alt="Loyalty tier levels screen">
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-line"><div class="k">Problem</div><div class="v">A 400+ location enterprise client needed a loyalty and ordering app that could drive repeat visits at national scale.</div></div>
+        <div class="ticket-line"><div class="k">My role</div><div class="v">Led the mobile loyalty product — tiered rewards, store locator, points redemption — for the French market.</div></div>
+        <div class="ticket-line"><div class="k">Outcome</div><div class="v">Delivered a loyalty and ordering experience live across the full Subway France network.</div></div>
+        <div class="stamp"><b>The call I'd defend</b><span>Built loyalty tiers around a visible progress bar rather than raw discounts — gamified status is what actually brings people back.</span></div>
+      </div>
+    </article>
+
+    <!-- Ticket 06 -->
+    <article class="ticket">
+      <div class="ticket-head">
+        <div>
+          <div class="ticket-num">TICKET #06</div>
+          <h3 class="ticket-title">eCommerce Ordering</h3>
+          <div class="ticket-meta">Bit-soft · Pizza Hut — 15+ locations, Romania</div>
+        </div>
+        <div class="ticket-badge">15+ locations</div>
+      </div>
+      <div class="ticket-gallery single">
+        <img src="assets/web_ordering.jpg" alt="Pizza Hut Romania online ordering website with offers">
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-line"><div class="k">Problem</div><div class="v">Pizza Hut Romania needed an online ordering platform that could run promotions and deals without disrupting checkout.</div></div>
+        <div class="ticket-line"><div class="k">My role</div><div class="v">Owned the eCommerce ordering platform product, including promotional and offer mechanics.</div></div>
+        <div class="ticket-line"><div class="k">Outcome</div><div class="v">Delivered the ordering platform now used across 15+ Pizza Hut locations in Romania.</div></div>
+        <div class="stamp"><b>The call I'd defend</b><span>Kept promotional logic — like "1+1" deals — as a layer on top of core checkout, not baked into it, so new offers ship without touching the ordering flow.</span></div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section wrap">
+    <div class="section-head">
+      <div class="section-tag">// profile</div>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-grid">
+      <img class="about-photo" src="assets/profile.jpg" alt="Cristian Floriștean">
+      <div>
+        <p>Senior Product Manager with 10+ years leading digital products — eCommerce, POS, delivery, mobile, and telecom — across Romania, Bulgaria, Hungary, and France. Currently leading digital products at Bit-soft, including Breeze POS. Earlier in my career, I worked in mobile internet and telecom product management at Vodafone Romania.</p>
+        <p>I pair Jira with AI tools like Claude and Codex to accelerate story writing, documentation, and product configuration — cutting time spent on these tasks by roughly 50–70%.</p>
+        <p style="color:var(--ink-soft)">Based in Bucharest, Romania.</p>
+        <ul class="cert-list">
+          <li><span>Advanced Negotiation Skills</span><span class="org">Vision Consulting · 2014</span></li>
+          <li><span>Business Case — Certification</span><span class="org">BPP Professional Education · 2007</span></li>
+          <li><span>Mastering the Requirements Process</span><span class="org">Volare Template · 2007</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CONTACT -->
+<footer id="contact" class="contact-block">
+  <div class="contact-inner">
+    <div class="section-tag">// open to opportunities</div>
+    <h2 class="contact-title">Let's build something that ships.</h2>
+    <div class="contact-row">
+      <a href="mailto:cristian.floristean@gmail.com">cristian.floristean@gmail.com</a>
+      <a href="tel:+40720274784">+40 720 274 784</a>
+      <a href="https://www.linkedin.com/in/cfloristean/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="foot-line">
+      <span>Cristian Floriștean — Senior Product Manager</span>
+      <span>Bucharest, Romania</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
