@@ -241,6 +241,21 @@
   }
   .stamp span{color:var(--ink);}
 
+  /* ---------- HOW I WORK ---------- */
+  .process-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);margin-top:8px;
+  }
+  @media(max-width:800px){ .process-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:520px){ .process-grid{grid-template-columns:1fr;} }
+  .process-item{background:var(--paper-dim);padding:26px 24px;}
+  .process-num{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fire);
+    letter-spacing:.05em;margin-bottom:14px;
+  }
+  .process-item h4{margin:0 0 8px;font-size:1.02rem;font-weight:700;}
+  .process-item p{margin:0;font-size:.9rem;color:var(--ink-soft);line-height:1.55;}
+
   /* ---------- ABOUT ---------- */
   .about-grid{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:start;}
   @media(max-width:680px){ .about-grid{grid-template-columns:1fr;} }
@@ -283,6 +298,7 @@
     <a class="nav-mark" href="#top"><span class="dot"></span>CF · PRODUCT</a>
     <nav class="links">
       <a href="#work">Work</a>
+      <a href="#how-i-work">How I work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -305,6 +321,7 @@
         <h1 class="headline">A Product Manager who turns operational chaos into <span class="accent">measurable outcomes.</span></h1>
         <p class="sub">10+ years leading digital products across eCommerce, POS, delivery, and telecom — for enterprise restaurant brands operating across Romania, Bulgaria, Hungary, and France.</p>
         <div class="hero-ctas">
+          <a class="btn btn-ghost" href="assets/CV_Cristian_Floristean.pdf" download>Download CV ↓</a>
           <a class="btn btn-solid" href="#work">See selected work</a>
           <a class="btn btn-ghost" href="#contact">Get in touch</a>
         </div>
@@ -501,6 +518,47 @@
       </div>
     </article>
 
+  </section>
+
+  <!-- HOW I WORK -->
+  <section id="how-i-work" class="section wrap">
+    <div class="section-head">
+      <div class="section-tag">// operating principles</div>
+      <h2 class="section-title">How I work</h2>
+      <p class="section-note">The habits behind the outcomes above — how I run product day to day at Bit-soft.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-item">
+        <div class="process-num">01 · STRATEGY</div>
+        <h4>Product strategy</h4>
+        <p>Set vision and roadmap across markets, prioritizing initiatives by customer value, business impact, and delivery effort.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02 · DISCOVERY</div>
+        <h4>Discovery &amp; requirements</h4>
+        <p>Translate customer pain points into clear requirements and user journeys — cutting requirements rework by roughly 80%.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03 · ALIGNMENT</div>
+        <h4>Stakeholder alignment</h4>
+        <p>Partner with enterprise stakeholders across 4 markets to align priorities and keep delivery grounded in business reality.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">04 · BACKLOG</div>
+        <h4>Backlog ownership</h4>
+        <p>Own the backlog end-to-end — user stories, acceptance criteria, and definition of done — so engineering never guesses at intent.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">05 · DELIVERY</div>
+        <h4>Agile delivery</h4>
+        <p>Lead Scrum ceremonies across 4 cross-functional squads, removing blockers and protecting scope, quality, and release readiness.</p>
+      </div>
+      <div class="process-item">
+        <div class="process-num">06 · AI-ENABLED</div>
+        <h4>AI-enabled productivity</h4>
+        <p>Pair Jira with AI tools (Claude, Codex) to speed up story writing, documentation, and configuration by 50–70%.</p>
+      </div>
+    </div>
   </section>
 
   <!-- ABOUT -->
