@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,29 @@
     --mint:#2B6E58;
     --mint-dim:#DCE7E1;
     --paper-rgb:246,244,238;
+    --contact-bg:#1C1B18;
+    --contact-text:#F6F4EE;
+    --contact-line: rgba(246,244,238,.25);
+    --contact-line-strong: rgba(246,244,238,.35);
+    --contact-tag:#E8A98C;
     --max:1100px;
+  }
+  html[data-theme="dark"]{
+    --paper:#17140F;
+    --paper-dim:#201C16;
+    --ink:#F2EEE3;
+    --ink-soft:#A29A87;
+    --line:#3A342A;
+    --fire:#FF6E3E;
+    --fire-dim:rgba(255,110,62,.14);
+    --mint:#5FCBA6;
+    --mint-dim:rgba(95,203,166,.14);
+    --paper-rgb:23,20,15;
+    --contact-bg:#F2EEE3;
+    --contact-text:#17140F;
+    --contact-line: rgba(23,20,15,.16);
+    --contact-line-strong: rgba(23,20,15,.28);
+    --contact-tag:#B23A16;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -32,6 +54,7 @@
     font-size:16px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    transition:background .25s ease,color .25s ease;
   }
   a{color:inherit;}
   img{max-width:100%;display:block;}
@@ -69,6 +92,15 @@
   }
   .nav-cta:hover{background:var(--ink);color:var(--paper);}
   @media(max-width:720px){ nav.links{display:none;} }
+  .theme-toggle{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.02em;
+    background:none;border:1px solid var(--line);color:var(--ink-soft);
+    padding:8px 12px;cursor:pointer;display:flex;align-items:center;gap:7px;
+    border-radius:0;
+  }
+  .theme-toggle:hover{border-color:var(--fire);color:var(--fire);}
+  .theme-toggle .swatch{width:9px;height:9px;border-radius:50%;background:var(--ink);display:inline-block;}
+  .nav-right{display:flex;align-items:center;gap:14px;}
 
   /* ---------- HERO ---------- */
   .hero{padding:64px 0 40px;}
@@ -122,6 +154,27 @@
     font-family:'IBM Plex Mono',monospace;}
   .receipt-item .val{font-size:1.5rem;font-weight:700;color:var(--fire);}
   .receipt-item .label{font-size:11.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;text-align:right;max-width:14ch;}
+
+  /* ---------- IMPACT STRIP ---------- */
+  .impact{padding:56px 0 12px;}
+  .impact-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+    border-top:1px solid var(--ink);
+  }
+  @media(max-width:900px){ .impact-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:520px){ .impact-grid{grid-template-columns:1fr;} }
+  .impact-item{
+    padding:20px 18px;border-bottom:1px solid var(--ink);border-right:1px solid var(--line);
+  }
+  .impact-grid .impact-item:nth-child(5n){border-right:none;}
+  @media(max-width:900px){ .impact-grid .impact-item:nth-child(2n){border-right:none;} .impact-grid .impact-item:nth-child(5n){border-right:1px solid var(--line);} }
+  @media(max-width:520px){ .impact-grid .impact-item{border-right:none !important;} }
+  .impact-num{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fire);
+    letter-spacing:.05em;margin-bottom:10px;
+  }
+  .impact-item h4{margin:0 0 8px;font-size:.95rem;font-weight:700;}
+  .impact-item p{margin:0;font-size:.85rem;color:var(--ink-soft);line-height:1.5;}
 
   /* ---------- SECTION HEADERS ---------- */
   .section{padding:76px 0;}
@@ -202,23 +255,24 @@
 
   /* ---------- CONTACT / FOOTER ---------- */
   .contact-block{
-    background:var(--ink);color:var(--paper);padding:64px 0 40px;
+    background:var(--contact-bg);color:var(--contact-text);padding:64px 0 40px;
+    transition:background .25s ease,color .25s ease;
   }
   .contact-inner{max-width:var(--max);margin:0 auto;padding:0 28px;}
-  .contact-block .section-tag{color:#E8A98C;}
+  .contact-block .section-tag{color:var(--contact-tag);}
   .contact-title{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:700;margin:0 0 18px;max-width:22ch;}
   .contact-row{
     display:flex;flex-wrap:wrap;gap:14px;margin:26px 0 40px;
   }
   .contact-row a{
     font-family:'IBM Plex Mono',monospace;font-size:13.5px;text-decoration:none;
-    border:1px solid rgba(246,244,238,.35);padding:12px 20px;color:var(--paper);
+    border:1px solid var(--contact-line-strong);padding:12px 20px;color:var(--contact-text);
   }
   .contact-row a:hover{border-color:var(--fire);color:var(--fire);}
   .foot-line{
-    border-top:1px dashed rgba(246,244,238,.25);padding-top:20px;
+    border-top:1px dashed var(--contact-line);padding-top:20px;
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:rgba(246,244,238,.55);
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--contact-text);opacity:.6;
   }
 </style>
 </head>
@@ -226,13 +280,18 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-mark"><span class="dot"></span>CF · PRODUCT</a>
+    <a class="nav-mark" href="#top"><span class="dot"></span>CF · PRODUCT</a>
     <nav class="links">
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="nav-cta" href="#contact">Let's talk</a>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+        <span class="swatch" id="themeSwatch"></span><span id="themeLabel">Dark</span>
+      </button>
+      <a class="nav-cta" href="#contact">Let's talk</a>
+    </div>
   </div>
 </header>
 
@@ -242,7 +301,7 @@
   <section class="hero wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow"><span class="pulse"></span>Currently — Senior PM, Digital Products &amp; Product Owner (Breeze POS) @ Bit-soft</div>
+        <div class="eyebrow"><span class="pulse"></span>Currently — Product Manager &amp; Product Owner, Digital Products @ Bit-soft</div>
         <h1 class="headline">A Product Manager who turns operational chaos into <span class="accent">measurable outcomes.</span></h1>
         <p class="sub">10+ years leading digital products across eCommerce, POS, delivery, and telecom — for enterprise restaurant brands operating across Romania, Bulgaria, Hungary, and France.</p>
         <div class="hero-ctas">
@@ -266,6 +325,41 @@
     </div>
   </section>
 
+  <!-- SELECTED PRODUCT IMPACT -->
+  <section class="impact wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="section-tag">// at a glance</div>
+      <h2 class="section-title">Selected product impact</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-num">01 · KDS TURNAROUND</div>
+        <h4>10% → 0% lost orders</h4>
+        <p>Built an enterprise Kitchen Display System that eliminated operational gaps and eradicated lost restaurant orders.</p>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">02 · BREEZE POS LAUNCH</div>
+        <h4>40% adoption in 12 months</h4>
+        <p>Led the redesign and international launch of Breeze POS across Romania, Bulgaria, Hungary, and France.</p>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">03 · ENTERPRISE DELIVERY</div>
+        <h4>500+ locations · ~500K txns/mo</h4>
+        <p>Delivered B2B software adopted by Pizza Hut, City Grill, Burger King (Hungary), and Subway (France).</p>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">04 · CONTACTLESS ORDERING</div>
+        <h4>+17% average order value</h4>
+        <p>Built a white-label QR table-ordering experience adopted by 40+ establishments, embedded in the Adobe Life app.</p>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">05 · MARKET GROWTH</div>
+        <h4>+30% YoY mobile internet demand</h4>
+        <p>Grew mobile internet demand and secured multi-million-euro voice/SMS interconnection agreements at Vodafone Romania.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- SELECTED WORK -->
   <section id="work" class="section wrap">
     <div class="section-head">
@@ -280,7 +374,7 @@
         <div>
           <div class="ticket-num">TICKET #01</div>
           <h3 class="ticket-title">Breeze POS</h3>
-          <div class="ticket-meta">Senior Product Manager &amp; Product Owner · Bit-soft · 2016–2026</div>
+          <div class="ticket-meta">Product Manager &amp; Product Owner, Digital Products · Bit-soft · 2016–2026</div>
         </div>
         <div class="ticket-badge">40% adoption · 12 months</div>
       </div>
@@ -328,8 +422,10 @@
         </div>
         <div class="ticket-badge">+17% order value</div>
       </div>
-      <div class="ticket-gallery single">
+      <div class="ticket-gallery">
         <img src="assets/qr_menu.jpg" alt="QR table-ordering menu on mobile">
+        <img src="assets/qr_cart.jpg" alt="QR ordering cart and checkout with recommended items">
+        <img src="assets/qr_feedback.jpg" alt="Post-order satisfaction feedback prompt">
       </div>
       <div class="ticket-body">
         <div class="ticket-line"><div class="k">Problem</div><div class="v">Restaurants needed a way for guests to browse and order directly from the table, without adding friction or replacing existing POS workflows.</div></div>
@@ -446,6 +542,31 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function(){
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    var label = document.getElementById('themeLabel');
+    var swatch = document.getElementById('themeSwatch');
+
+    function apply(theme){
+      root.setAttribute('data-theme', theme);
+      label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+      swatch.style.background = theme === 'dark' ? '#F2EEE3' : '#17140F';
+      try{ localStorage.setItem('cf-theme', theme); }catch(e){}
+    }
+
+    var saved = null;
+    try{ saved = localStorage.getItem('cf-theme'); }catch(e){}
+    apply(saved || 'dark');
+
+    btn.addEventListener('click', function(){
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(next);
+    });
+  })();
+</script>
 
 </body>
 </html>
