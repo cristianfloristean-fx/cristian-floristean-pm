@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cristian Floriștean — Senior Product Manager</title>
-<meta name="description" content="Cristian Floriștean — Senior Product Manager. 10+ years leading eCommerce, POS, and delivery products across Romania, Bulgaria, Hungary, and France.">
+<title>Cristian Floriștean — Product Manager &amp; Business Analyst</title>
+<meta name="description" content="Cristian Floriștean — Product Manager & Business Analyst. 10+ years leading eCommerce, POS, and delivery products across Romania, Bulgaria, Hungary, and France.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -158,7 +158,7 @@
   /* ---------- IMPACT STRIP ---------- */
   .impact{padding:56px 0 12px;}
   .impact-grid{
-    display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
     border-top:1px solid var(--ink);
   }
   @media(max-width:900px){ .impact-grid{grid-template-columns:repeat(2,1fr);} }
@@ -166,8 +166,8 @@
   .impact-item{
     padding:20px 18px;border-bottom:1px solid var(--ink);border-right:1px solid var(--line);
   }
-  .impact-grid .impact-item:nth-child(5n){border-right:none;}
-  @media(max-width:900px){ .impact-grid .impact-item:nth-child(2n){border-right:none;} .impact-grid .impact-item:nth-child(5n){border-right:1px solid var(--line);} }
+  .impact-grid .impact-item:nth-child(3n){border-right:none;}
+  @media(max-width:900px){ .impact-grid .impact-item:nth-child(2n){border-right:none;} .impact-grid .impact-item:nth-child(3n){border-right:1px solid var(--line);} }
   @media(max-width:520px){ .impact-grid .impact-item{border-right:none !important;} }
   .impact-num{
     font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fire);
@@ -317,9 +317,9 @@
   <section class="hero wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow"><span class="pulse"></span>Currently — Product Manager &amp; Product Owner</div>
+        <div class="eyebrow"><span class="pulse"></span>Currently — Product Manager &amp; Product Owner, Digital Products @ Bit-soft</div>
         <h1 class="headline">A Product Manager who turns operational chaos into <span class="accent">measurable outcomes.</span></h1>
-        <p class="sub">10+ years leading digital products across eCommerce, POS, delivery, and telecom — for enterprise restaurant brands operating across Romania, Bulgaria, Hungary, and France.</p>
+        <p class="sub">10+ years leading digital products across eCommerce, POS, delivery, and telecom — for enterprise restaurant brands operating across Romania, Bulgaria, Hungary, and France. Grounded in strong requirements and functional analysis, from user stories through regulatory compliance.</p>
         <div class="hero-ctas">
           <a class="btn btn-ghost" href="assets/CV_Cristian_Floristean.pdf" download>Download CV ↓</a>
           <a class="btn btn-solid" href="#work">See selected work</a>
@@ -374,13 +374,18 @@
         <h4>+30% YoY mobile internet demand</h4>
         <p>Grew mobile internet demand and secured multi-million-euro voice/SMS interconnection agreements at Vodafone Romania.</p>
       </div>
+      <div class="impact-item">
+        <div class="impact-num">06 · REGULATORY COMPLIANCE</div>
+        <h4>NF525 certification achieved</h4>
+        <p>Led the requirements analysis and functional certification of the POS platform for the French fiscal market.</p>
+      </div>
     </div>
   </section>
 
   <!-- SELECTED WORK -->
   <section id="work" class="section wrap">
     <div class="section-head">
-      <div class="section-tag">// six order tickets</div>
+      <div class="section-tag">// seven order tickets</div>
       <h2 class="section-title">Selected work</h2>
       <p class="section-note">Enterprise restaurant-tech products, shipped end to end — from problem framing to adoption.</p>
     </div>
@@ -413,6 +418,24 @@
       <div class="ticket-head">
         <div>
           <div class="ticket-num">TICKET #02</div>
+          <h3 class="ticket-title">NF525 Fiscal Certification</h3>
+          <div class="ticket-meta">Bit-soft · French market compliance</div>
+        </div>
+        <div class="ticket-badge">Regulatory certification</div>
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-line"><div class="k">Problem</div><div class="v">The POS platform needed certified compliance with NF525, France's anti-fraud fiscal legislation, to legally operate in the French market.</div></div>
+        <div class="ticket-line"><div class="k">My role</div><div class="v">Analyzed the French fiscal legislation, documented functional specifications and test scenarios, and coordinated with technical teams and independent auditors through the certification process.</div></div>
+        <div class="ticket-line"><div class="k">Outcome</div><div class="v">Achieved NF525 certification, unlocking the French market for the POS platform — clearing the way for rollouts like Subway France.</div></div>
+        <div class="stamp"><b>The call I'd defend</b><span>Treated the legal requirement as a specification problem from day one — documenting test scenarios before development started, so the audit had no surprises.</span></div>
+      </div>
+    </article>
+
+    <!-- Ticket 03 -->
+    <article class="ticket">
+      <div class="ticket-head">
+        <div>
+          <div class="ticket-num">TICKET #03</div>
           <h3 class="ticket-title">Kitchen Display System</h3>
           <div class="ticket-meta">Bit-soft · 2016–2026</div>
         </div>
@@ -423,17 +446,17 @@
       </div>
       <div class="ticket-body">
         <div class="ticket-line"><div class="k">Problem</div><div class="v">Orders were getting lost between the POS and the kitchen, with no visibility into course timing or prep status.</div></div>
-        <div class="ticket-line"><div class="k">My role</div><div class="v">Led the KDS product from concept to enterprise rollout, defining course-based timers and kitchen workflow logic.</div></div>
+        <div class="ticket-line"><div class="k">My role</div><div class="v">Mapped restaurant floor and kitchen workflows to find the root causes of order loss, then defined the functional requirements, course-based timer logic, and UAT plan for the KDS build.</div></div>
         <div class="ticket-line"><div class="k">Outcome</div><div class="v">Reduced lost restaurant orders from 10% to 0%.</div></div>
         <div class="stamp"><b>The call I'd defend</b><span>Built the system around course sequencing, not just ticket printing — kitchens needed to know when to fire, not just what to cook.</span></div>
       </div>
     </article>
 
-    <!-- Ticket 03 -->
+    <!-- Ticket 04 -->
     <article class="ticket">
       <div class="ticket-head">
         <div>
-          <div class="ticket-num">TICKET #03</div>
+          <div class="ticket-num">TICKET #04</div>
           <h3 class="ticket-title">Contactless QR Table Ordering</h3>
           <div class="ticket-meta">Bit-soft · white-label · embedded in the Adobe Life app</div>
         </div>
@@ -452,11 +475,11 @@
       </div>
     </article>
 
-    <!-- Ticket 04 -->
+    <!-- Ticket 05 -->
     <article class="ticket">
       <div class="ticket-head">
         <div>
-          <div class="ticket-num">TICKET #04</div>
+          <div class="ticket-num">TICKET #05</div>
           <h3 class="ticket-title">Delivery Dispatch &amp; Driver App</h3>
           <div class="ticket-meta">Bit-soft</div>
         </div>
@@ -474,11 +497,11 @@
       </div>
     </article>
 
-    <!-- Ticket 05 -->
+    <!-- Ticket 06 -->
     <article class="ticket">
       <div class="ticket-head">
         <div>
-          <div class="ticket-num">TICKET #05</div>
+          <div class="ticket-num">TICKET #06</div>
           <h3 class="ticket-title">Loyalty &amp; Mobile App</h3>
           <div class="ticket-meta">Bit-soft · Subway — 400+ locations, France</div>
         </div>
@@ -497,11 +520,11 @@
       </div>
     </article>
 
-    <!-- Ticket 06 -->
+    <!-- Ticket 07 -->
     <article class="ticket">
       <div class="ticket-head">
         <div>
-          <div class="ticket-num">TICKET #06</div>
+          <div class="ticket-num">TICKET #07</div>
           <h3 class="ticket-title">eCommerce Ordering</h3>
           <div class="ticket-meta">Bit-soft · Pizza Hut — 15+ locations, Romania</div>
         </div>
@@ -534,9 +557,9 @@
         <p>Set vision and roadmap across markets, prioritizing initiatives by customer value, business impact, and delivery effort.</p>
       </div>
       <div class="process-item">
-        <div class="process-num">02 · DISCOVERY</div>
+        <div class="process-num">02 · DISCOVERY &amp; ANALYSIS</div>
         <h4>Discovery &amp; requirements</h4>
-        <p>Translate customer pain points into clear requirements and user journeys — cutting requirements rework by roughly 80%.</p>
+        <p>Translate customer pain points and legal/business requirements into functional specs and user journeys — cutting requirements rework by roughly 80%.</p>
       </div>
       <div class="process-item">
         <div class="process-num">03 · ALIGNMENT</div>
@@ -570,10 +593,12 @@
     <div class="about-grid">
       <img class="about-photo" src="assets/profile.jpg" alt="Cristian Floriștean">
       <div>
-        <p>Senior Product Manager with 10+ years leading digital products — eCommerce, POS, delivery, mobile, and telecom — across Romania, Bulgaria, Hungary, and France. Currently leading digital products at Bit-soft, including Breeze POS. Earlier in my career, I worked in mobile internet and telecom product management at Vodafone Romania.</p>
+        <p>Product Manager with 10+ years leading digital products — eCommerce, POS, delivery, mobile, and telecom — across Romania, Bulgaria, Hungary, and France. Currently leading digital products at Bit-soft, including Breeze POS. Earlier in my career, I worked in mobile internet and telecom product management at Vodafone Romania.</p>
+        <p>My product work is grounded in strong requirements and functional analysis — translating business, customer, and regulatory needs into functional specifications, user stories, and acceptance criteria that guide engineering delivery.</p>
         <p>I pair Jira with AI tools like Claude and Codex to accelerate story writing, documentation, and product configuration — cutting time spent on these tasks by roughly 50–70%.</p>
         <p style="color:var(--ink-soft)">Based in Bucharest, Romania.</p>
         <ul class="cert-list">
+          <li><span>NF525 Fiscal Certification (Functional Lead)</span><span class="org">Bit-soft</span></li>
           <li><span>Advanced Negotiation Skills</span><span class="org">Vision Consulting · 2014</span></li>
           <li><span>Business Case — Certification</span><span class="org">BPP Professional Education · 2007</span></li>
           <li><span>Mastering the Requirements Process</span><span class="org">Volare Template · 2007</span></li>
@@ -595,7 +620,7 @@
       <a href="https://www.linkedin.com/in/cfloristean/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
     <div class="foot-line">
-      <span>Cristian Floriștean — Senior Product Manager</span>
+      <span>Cristian Floriștean — Product Manager &amp; Business Analyst</span>
       <span>Bucharest, Romania</span>
     </div>
   </div>
